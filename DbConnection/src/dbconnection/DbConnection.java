@@ -26,13 +26,7 @@ public class DbConnection {
         
         aHandler.open();
         pHandler.open();
-        
-        //aHandler.delete(3);
-        //pHandler.delete(3);
-        
-        //aHandler.insert(new Account("root", "oliva"));
-        //pHandler.insert(new Permission(0));
-        
+
         Authentication instance = new Authentication();
         
         String user = instance.getUsername();
@@ -42,21 +36,7 @@ public class DbConnection {
             case 1: System.out.println("You are an Operator!"); break;
             case 2: System.out.println("You are an User!"); break;
         }
-        /*
-        System.out.println("\nAccounts:");
-        List<Account> accounts = aHandler.getData();
-        for(int i=0;i<accounts.size();i++){
-            Account tmp = accounts.get(i);
-            System.out.println(tmp.getID() + " "+tmp.getUsername()+" "+tmp.getPassword());
-            
-        }
-        System.out.println("\nPermissions:");
-        List<Permission> permissions = pHandler.getData();
-        for(int i=0;i<permissions.size();i++){
-            Permission tmp = permissions.get(i);
-            System.out.println(tmp.getID() + " "+tmp.getPermission());
-        }
-        */
+
         aHandler.close();
         pHandler.close();
     }

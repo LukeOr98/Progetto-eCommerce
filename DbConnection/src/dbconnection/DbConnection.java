@@ -26,7 +26,11 @@ public class DbConnection {
         
         aHandler.open();
         pHandler.open();
-
+        
+        //Comandi di servizio
+        //aHandler.insert(new Account("root", "oliva"));
+        //pHandler.insert(new Permission(0));
+        
         Authentication instance = new Authentication();
         
         String user = instance.getUsername();
@@ -36,7 +40,7 @@ public class DbConnection {
             case 1: System.out.println("You are an Operator!"); break;
             case 2: System.out.println("You are an User!"); break;
         }
-
+        
         aHandler.close();
         pHandler.close();
     }

@@ -9,7 +9,6 @@ import it.ecommerceproject.databases.permissions.Permission;
 import it.ecommerceproject.databases.permissions.PermissionsHandler;
 import it.ecommerceproject.databases.processes.Authentication;
 import it.ecommerceproject.databases.panels.*;
-import java.util.List;
 
 // Permission id = 0 --> Admin
 // Permission id = 1 --> Operator

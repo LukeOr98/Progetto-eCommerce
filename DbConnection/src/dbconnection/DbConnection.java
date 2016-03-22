@@ -17,7 +17,7 @@ import it.ecommerceproject.databases.panels.*;
 public class DbConnection {
 
     public static void main(String[] args) throws Exception {
-        Credentials credentials = new Credentials("wikibackup.tes.mi.it","root","oliva");
+        Credentials credentials = new Credentials("sql.tes.mi.it","root","oliva");
         DatabaseHelper.openConnection(credentials);
         
         AccountHandler aHandler = new AccountHandler();

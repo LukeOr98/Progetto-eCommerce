@@ -17,6 +17,7 @@ public class OrdersHandler extends DatabaseHandler<Order> {
 	private static final String ID_KEY ="id";
 	private static final String USER_KEY ="userid";
 	private static final String PRODUCTID_KEY="productid";
+        private static final String ORDERED_KEY="ordered";
 	
 	
 	public OrdersHandler() {
@@ -28,8 +29,9 @@ public class OrdersHandler extends DatabaseHandler<Order> {
 	protected List<KeyValuePair> getEntryList(Order obj) {
 		List<KeyValuePair> list = new ArrayList<KeyValuePair>();
 		
-		list.add( new KeyValuePair(USER_KEY,("'"+obj.getUser()+"'")) );
-		list.add( new KeyValuePair(PRODUCTID_KEY, ""+obj.getProductID() ));
+		list.add( new KeyValuePair(USER_KEY,(""+obj.getUser())));
+		list.add( new KeyValuePair(PRODUCTID_KEY, ""+obj.getProductID()));
+                list.add( new KeyValuePair(ORDERED_KEY, ""+obj.getOrdered()));
 		
 		return list;
 	}
@@ -39,8 +41,9 @@ public class OrdersHandler extends DatabaseHandler<Order> {
 		int id = resultSet.getInt(ID_KEY);
 		int user = resultSet.getInt(USER_KEY);
 		int productID = resultSet.getInt(PRODUCTID_KEY);
+                int ordered = resultSet.getInt(ORDERED_KEY);
 		
-		return new Order(id,user,productID);
+		return new Order(id,user,productID,ordered);
 	}
 
 }

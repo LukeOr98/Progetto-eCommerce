@@ -14,9 +14,10 @@ public class AdminPanel {
         
         AccountsManager aManager = new AccountsManager();
         ProductsManager pManager = new ProductsManager();
+        OrdersManager oManager = new OrdersManager();
         
         do {
-            System.out.println("\n1 - Create new user\n2 - Delete a user\n3 - Edit a user\n4 - Print all Users\n5 - Add new product\n6 - Delete a product\n7 - Edit a product\n8 - Print all products\n9 - Exit\n\n--");
+            System.out.println("\n1 - Create new user\n2 - Delete a user\n3 - Edit a user\n4 - Print all Users\n5 - Add new product\n6 - Delete a product\n7 - Edit a product\n8 - Print all products\n9 - Print a product\n10 - Add a Product to cart\n11 - Show cart\n12 - Exit\n\n--");
             
             chosen = input.nextInt();
             
@@ -29,10 +30,13 @@ public class AdminPanel {
                 case 6: if(pManager.deleteProduct() == 0) {System.out.println("Product successfully removed");} break;
                 case 7: if(pManager.editProduct()) {System.out.println("Product successfully edited");}break;
                 case 8: pManager.printProducts();break;
-                case 9: break;
+                case 9: pManager.printProduct();break;
+                case 10: oManager.addToCart(u);break;
+                case 11: oManager.showCart(u);break;
+                case 12: break;
                 default: System.out.println(chosen + ": Unknown command");
             }
-        } while(chosen != 9);
+        } while(chosen != 12);
     }
     
 }

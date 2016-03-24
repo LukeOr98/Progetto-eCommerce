@@ -144,5 +144,24 @@ public class ProductsManager {
             System.out.printf("%5d%20s%17s...%20.2fEUR%10d\n", p.getID(), p.getName(), p.getDescription(), p.getPrice(), p.getBought());
         }
     }
+    public void printProduct() throws SQLException{
+        prodHandler.open();
+        
+        boolean found = false;
+        
+        Product p;
+        List<Product> products = prodHandler.getData();
+        System.out.println("Name: "); String name = input.next();
+        for(int i = 0; i<products.size(); i++){
+            p = products.get(i);
+            if(p.getName().equals(name)){
+                System.out.println("\n\n" + p.getName() + "\n\n" + p.getDescription());
+                found = true;
+            }
+        }
+        if(!found){
+            System.out.println("Product " + name + " doesn't exists\n");
+        }
+    }
     
 }

@@ -8,8 +8,6 @@ public class Product extends Identificable{
 	private String name;
 	private String description;
 	private double price;
-
-
         private int bought;
 	
 	
@@ -17,6 +15,8 @@ public class Product extends Identificable{
 		this.name = name;
 		this.description = description;
 		this.price = price;
+                this.bought = bought;
+                
 		setID(-1);
 	}
 	
@@ -25,6 +25,7 @@ public class Product extends Identificable{
 		this.name = name;
 		this.description = description;
 		this.price = price;
+                this.bought = bought;
 	}
 	
 	
@@ -46,7 +47,6 @@ public class Product extends Identificable{
 	public void setPrice(double price) {
 		this.price = price;
 	}
-        
 	public int getBought() {
                 return bought;
         }

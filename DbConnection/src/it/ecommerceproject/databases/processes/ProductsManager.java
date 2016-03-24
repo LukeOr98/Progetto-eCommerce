@@ -25,8 +25,8 @@ public class ProductsManager {
         Product p;
         
         do{
-            System.out.println("New Product's Name: "); String name = input.next();
-            System.out.println("New Product's Description: "); String desc = input.next();
+            System.out.println("New Product's Name: "); String name = input.nextLine();
+            System.out.println("New Product's Description: "); String desc = input.nextLine();
             System.out.println("New Product's Price: "); double price = input.nextDouble();
             List<Product> products = prodHandler.getData();
             for(int i = 0; i < products.size(); i++){

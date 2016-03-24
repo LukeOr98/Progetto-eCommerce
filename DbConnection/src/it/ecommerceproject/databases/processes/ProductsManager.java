@@ -37,7 +37,7 @@ public class ProductsManager {
             }
                 if(!found){
                     try {
-                        prodHandler.insert(new Product(name, desc, price));
+                        prodHandler.insert(new Product(name, desc, price,0));
                         added = true;
                     }
                     catch(SQLException e){
@@ -137,11 +137,11 @@ public class ProductsManager {
         Product p;
         
         List<Product> products = prodHandler.getData();
-        System.out.printf("%5s%20s%20s%20s\n", "ID", "Name", "Description", "Price");
+        System.out.printf("%5s%20s%20s%20s%13s\n", "ID", "Name", "Description", "Price", "Bought");
         for(int i = 0; i<products.size(); i++){
             p = products.get(i);
             
-            System.out.printf("%5d%20s%17s...%20.2fEUR\n", p.getID(), p.getName(), p.getDescription(), p.getPrice());
+            System.out.printf("%5d%20s%17s...%20.2fEUR%10d\n", p.getID(), p.getName(), p.getDescription(), p.getPrice(), p.getBought());
         }
     }
     

@@ -8,16 +8,19 @@ public class Product extends Identificable{
 	private String name;
 	private String description;
 	private double price;
+
+
+        private int bought;
 	
 	
-	public Product(String name,String description,double price){
+	public Product(String name,String description,double price,int bought){
 		this.name = name;
 		this.description = description;
 		this.price = price;
 		setID(-1);
 	}
 	
-	protected Product(int id,String name,String description,double price){
+	protected Product(int id,String name,String description,double price,int bought){
 		setID(id);
 		this.name = name;
 		this.description = description;
@@ -43,7 +46,14 @@ public class Product extends Identificable{
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
+        
+	public int getBought() {
+                return bought;
+        }
+
+        public void setBought(int bought) {
+                this.bought = bought;
+        }
 	
 	
 	

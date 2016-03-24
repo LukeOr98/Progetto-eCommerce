@@ -18,6 +18,7 @@ public class ProductsHandler extends DatabaseHandler<Product> {
 	private static final String NAME_KEY = "name";
 	private static final String DESCRIPTION_KEY ="description";
 	private static final String PRICE_KEY ="price";
+        private static final String BOUGHT_KEY ="bought";
 	
 	
 	
@@ -31,8 +32,9 @@ public class ProductsHandler extends DatabaseHandler<Product> {
 		String name = resultSet.getString(NAME_KEY);
 		String description = resultSet.getString(DESCRIPTION_KEY);
 		double price = resultSet.getDouble(PRICE_KEY);
+                int bought = resultSet.getInt(BOUGHT_KEY);
 		
-		return new Product(id,name,description,price);
+		return new Product(id,name,description,price,bought);
 	}
 
 	@Override
@@ -43,6 +45,7 @@ public class ProductsHandler extends DatabaseHandler<Product> {
 		list.add(new KeyValuePair(NAME_KEY,("'"+obj.getName())+"'") );
 		list.add(new KeyValuePair(DESCRIPTION_KEY, ("'"+obj.getDescription())+"'"));
 		list.add(new KeyValuePair(PRICE_KEY, ""+obj.getPrice()) );
+                list.add(new KeyValuePair(BOUGHT_KEY, ""+obj.getBought()) );
 		return list;
 	}
 	

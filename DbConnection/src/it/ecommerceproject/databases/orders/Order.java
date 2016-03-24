@@ -5,30 +5,30 @@ import it.ecommerceproject.util.Identificable;
 public class Order extends Identificable{
 
 	
-	private String user;
+	private int user;
 	private int productID;
 	
 	
-	protected Order(int id,String user, int productID){
+	protected Order(int id,int user, int productID){
 		setID(id);
 		this.user = user;
 		this.productID = productID;
 	}
 	
 	
-	public Order(String user,int productID){
+	public Order(int user,int productID){
 		this.user = user;
 		this.productID = productID;
 		setID(-1);
 	}
 
 
-	public String getUser() {
+	public int getUser() {
 		return user;
 	}
 
 
-	public void setUser(String user) {
+	public void setUser(int user) {
 		this.user = user;
 	}
 

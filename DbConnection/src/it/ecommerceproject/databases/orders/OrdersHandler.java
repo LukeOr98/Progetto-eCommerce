@@ -15,7 +15,7 @@ public class OrdersHandler extends DatabaseHandler<Order> {
 	private static final String TABLE_NAME ="orders";
 	
 	private static final String ID_KEY ="id";
-	private static final String USER_KEY ="user";
+	private static final String USER_KEY ="userid";
 	private static final String PRODUCTID_KEY="productid";
 	
 	
@@ -37,7 +37,7 @@ public class OrdersHandler extends DatabaseHandler<Order> {
 	@Override
 	protected Order getItemByCurrentResultSet(ResultSet resultSet) throws SQLException {
 		int id = resultSet.getInt(ID_KEY);
-		String user = resultSet.getString(USER_KEY);
+		int user = resultSet.getInt(USER_KEY);
 		int productID = resultSet.getInt(PRODUCTID_KEY);
 		
 		return new Order(id,user,productID);
